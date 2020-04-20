@@ -93,8 +93,12 @@ loginBtn.addEventListener("click", function(){
 
     const depositBtn = document.getElementById("addDeposit");
     depositBtn.addEventListener("click", function(){
-   const depositNumber = getInputNumber("depositAmount");
-  
+   var depositNumber = getInputNumber("depositAmount");
+   if( depositNumber > 0){
+    
+   }
+  else{
+    return depositNumber = 0;}
     spanUpdateText("currentDeposit",depositNumber);
     spanUpdateText("currentBalance",depositNumber);
 
@@ -107,8 +111,10 @@ loginBtn.addEventListener("click", function(){
 
     const withdrawBtn = document.getElementById("addWithdraw");
     withdrawBtn.addEventListener("click", function(){
-    const withdrawNumber = getInputNumber("withdrawAmount");
-
+    var withdrawNumber = getInputNumber("withdrawAmount");
+        if(withdrawNumber > 0 ){}
+        else{
+            return withdrawNumber = 0}
     spanUpdateText("currentWithdraw",withdrawNumber);
     spanUpdateText("currentBalance", -1* withdrawNumber);
     document.getElementById("withdrawAmount").value = "";
